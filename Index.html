@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dilkush Hair Salon | Premium Men's Grooming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins', sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#111;color:#fff;overflow-x:hidden;}
+
+/* NAVBAR */
+nav{position:fixed;top:0;width:100%;background:#000;padding:15px 8%;display:flex;justify-content:space-between;align-items:center;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.5);}
+nav h2{color:gold;cursor:pointer;}
+nav ul{list-style:none;display:flex;gap:25px;}
+nav ul li a{color:#fff;text-decoration:none;font-weight:500;}
+nav ul li a:hover{color:gold;}
+.hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;}
+.hamburger div{width:25px;height:3px;background:#fff;}
+
+/* HERO */
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1621605815971-fbc98d665033');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10%;}
+.hero h1{font-size:3rem;color:gold;animation:fadeIn 2s;}
+.hero p{margin:15px 0;font-size:1.2rem;animation:fadeIn 2s 0.5s;}
+.btn{display:inline-block;margin-top:15px;padding:12px 30px;background:gold;color:#000;text-decoration:none;border-radius:30px;font-weight:600;transition:0.3s;}
+.btn:hover{background:#fff;color:#000;}
+
+/* SECTIONS */
+section{padding:90px 8%;}
+section h2{text-align:center;color:gold;font-size:2.2rem;margin-bottom:40px;}
+
+/* ABOUT */
+.about{max-width:900px;margin:auto;text-align:center;line-height:1.6;font-size:1.1rem;opacity:0;transition:1s;}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.service{background:#1c1c1c;padding:30px;border-radius:10px;text-align:center;transition:0.3s;cursor:pointer;opacity:0;}
+.service:hover{transform:translateY(-5px);box-shadow:0 0 15px gold;}
+
+/* PRICE LIST */
+.prices{max-width:600px;margin:auto;}
+.price-item{display:flex;justify-content:space-between;padding:15px;border-bottom:1px solid #333;transition:0.3s;opacity:0;}
+.price-item:hover{background:#222;}
+
+/* BOOKING FORM */
+form{max-width:500px;margin:auto;background:#1c1c1c;padding:30px;border-radius:10px;opacity:0;}
+form input, form select{width:100%;padding:12px;margin-bottom:15px;border:none;border-radius:5px;}
+form button{width:100%;padding:12px;background:gold;border:none;font-weight:600;cursor:pointer;transition:0.3s;}
+form button:hover{background:#fff;color:#000;}
+
+/* CONTACT */
+.contact{text-align:center;opacity:0;}
+#map iframe{width:100%;border:0;height:300px;border-radius:10px;margin-top:20px;}
+
+/* FOOTER */
+footer{background:#000;text-align:center;padding:20px;font-size:.9rem;}
+
+/* STICKY BUTTONS */
+.sticky-book{position:fixed;bottom:20px;right:20px;background:gold;color:#000;padding:15px 20px;border-radius:50px;font-weight:600;z-index:1000;text-decoration:none;transition:0.3s;}
+.sticky-book:hover{background:#fff;color:#000;}
+
+.whatsapp{position:fixed;bottom:90px;right:20px;background:#25d366;color:#fff;padding:14px 18px;border-radius:50px;text-decoration:none;font-weight:600;}
+
+/* ANIMATION */
+@keyframes fadeIn{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+.fadeInUp{opacity:1 !important;transform:translateY(0) !important;transition:1s;}
+
+/* MOBILE */
+@media(max-width:768px){
+    nav ul{display:none;position:absolute;top:65px;right:8%;background:#000;flex-direction:column;width:200px;padding:15px;border-radius:10px;}
+    nav ul.show{display:flex;}
+    .hamburger{display:flex;}
+    .hero h1{font-size:2.3rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <h2>Dilkush Salon</h2>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
+    <ul id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#prices">Prices</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <div>
+        <h1>DILKUSH HAIR SALON</h1>
+        <p>Premium Men’s Grooming & Styling</p>
+        <a href="#booking" class="btn">Book Appointment</a>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+<h2>About Us</h2>
+<div class="about">Professional men’s grooming with expert barbers, modern clean interior, and premium service for confident style.</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+<div class="services">
+    <div class="service">Men’s Haircut</div>
+    <div class="service">Beard Trimming</div>
+    <div class="service">Hair Wash</div>
+    <div class="service">Facial & Cleanup</div>
+    <div class="service">Head Massage</div>
+    <div class="service">Complete Grooming</div>
+</div>
+</section>
+
+<!-- PRICE LIST -->
+<section id="prices">
+<h2>Price List</h2>
+<div class="prices">
+    <div class="price-item"><span>Haircut</span><span>₹150</span></div>
+    <div class="price-item"><span>Beard Trim</span><span>₹100</span></div>
+    <div class="price-item"><span>Haircut + Beard</span><span>₹220</span></div>
+    <div class="price-item"><span>Facial</span><span>₹300</span></div>
+    <div class="price-item"><span>Complete Grooming</span><span>₹450</span></div>
+</div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+<h2>Online Booking</h2>
+<form onsubmit="sendWhatsApp(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <select id="service" required>
+        <option value="">Select Service</option>
+        <option>Haircut</option>
+        <option>Beard Trim</option>
+        <option>Haircut + Beard</option>
+        <option>Complete Grooming</option>
+    </select>
+    <input type="date" id="date" required>
+    <input type="time" id="time" required>
+    <button type="submit">Book Appointment</button>
+</form>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Visit Us</h2>
+<div class="contact">
+<p><strong>Address:</strong> Your Shop Address Here</p>
+<p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
+<p><strong>Timing:</strong> 9:00 AM – 9:00 PM</p>
+</div>
+<div id="map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.335212054574!2d74.437912!3d14.292342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf8e123456789%3A0xabcdef1234567890!2sYour%20Salon%20Location!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" loading="lazy"></iframe>
+</div>
+</section>
+
+<!-- STICKY -->
+<a href="#booking" class="sticky-book">Book Now</a>
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Dilkush Hair Salon | Style • Confidence • Grooming
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById('navMenu').classList.toggle('show');
+}
+
+function sendWhatsApp(e){
+    e.preventDefault();
+    const name=name=document.getElementById('name').value;
+    const phone=document.getElementById('phone').value;
+    const service=document.getElementById('service').value;
+    const date=document.getElementById('date').value;
+    const time=document.getElementById('time').value;
+
+    const message=`Hello, my name is ${name}. I want ${service} on ${date} at ${time}. Phone: ${phone}`;
+    window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(message)}`,'_blank');
+}
+
+// SCROLL ANIMATION
+const faders=document.querySelectorAll('.about,.service,.price-item,form,.contact');
+window.addEventListener('scroll',()=>{
+    faders.forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 100){
+            el.classList.add('fadeInUp');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
